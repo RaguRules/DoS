@@ -131,4 +131,10 @@ def main():
         
     print 'all packets have been sent!'
 
-main()
+threads = 8
+i = 0
+while i <= threads:
+    x = threading.Thread(target=main)
+    print("Starting thread #{}...".format(i))
+    x.start()
+    i += 1
